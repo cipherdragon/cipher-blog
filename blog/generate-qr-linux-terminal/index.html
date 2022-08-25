@@ -1,0 +1,39 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Generate QR codes quickly in linux terminal | CipherBlog</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Sans&family=Josefin+Sans:wght@400;700&family=Open+Sans&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>The CipherBlog</a></div><nav><a href=/about>About</a>
+<a href=/contact>Contact</a>
+<a href=/blog>Blog</a>
+<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><div class=page-title-background></div><div class=page-title-background-overlay></div><h1 class=page-title>Generate QR codes quickly in linux terminal</h1><p class=page-title__date>Aug 04, 2022</p></div><div class=page-content><p>Recently I had to type a long password to an app, but it&rsquo;s super complex that
+typing is a headache. Password was in my password manager on laptop
+I decided to transfer the password using QR codes and then copy it.</p><p>Generating a QR is nothing hard these days, tons of online services for this
+now, but the thing is, my data is sensitive. Online services are not an
+option.</p><p>I searched how to generate QR codes from terminal and found this cool app called
+&ldquo;<strong>qrencode</strong>&rdquo;. It should be on every major distro repository.</p><p>Most common syntax is this.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>qrencode -l L -s <span class=m>6</span> -o output.png <span class=s1>&#39;Hello, world!&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>-o</code> option let you set the output and it is a required parameter. You can
+output to standard output by giving <code>-o</code> the value <code>-</code>. The <code>-l</code> option is the
+error correction level. Possible values are L, M Q, H and L is the lowest, H is
+the heighest. M is medium, Q is higher than medium but lower than H. <code>-s</code> is the
+pixel size. Default is 3 but I prefer 6. Having pixel size 6 will generate large
+QR.</p><p>Typing that command each time and opening the image is hard work. Let&rsquo;s simplify
+the process. I wrote a shell function for this.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=k>function</span> generate-qr <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nv>rand_file_name</span><span class=o>=</span><span class=k>$(</span>mktemp -t qrgen.XXXXXX<span class=k>)</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    qrencode -s <span class=m>6</span> -l H -o <span class=s2>&#34;</span><span class=nv>$rand_file_name</span><span class=s2>&#34;</span> <span class=s2>&#34;</span><span class=nv>$1</span><span class=s2>&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    sxiv -p <span class=s2>&#34;</span><span class=nv>$rand_file_name</span><span class=s2>&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    rm -f <span class=s2>&#34;</span><span class=nv>$rand_file_name</span><span class=s2>&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=nb>unset</span> rand_file_name<span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>The <code>mktemp</code> command will create a temporary file in the OS specific temporary
+directory. In our case <code>/tmp</code>. If that command is not available, search your
+distro repos. It should be there. Then we output the qr in png form to that
+temporary file and display it in <code>sxiv</code> so the mobile phone can read it. When we
+close <code>sxiv</code> our qr png will also get deleted.</p><p>Now generating QR codes are as easy as this.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>generate-qr <span class=s2>&#34;Hello world&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>That&rsquo;s it.</p><p>Don&rsquo;t be skid. Peace.</p></div><div class=hr></div><div class=commenting><p class=commenting>If you have any comments, please email me or direct message me
+on my mastodon. Subscribe the blog using rss.<br><br>Email: adeepagunathilake@gmail.com<br>Mastodon:
+<a href=https://mstdn.starnix.network/@cipherdragon>@cipherdragon@mstdn.starnix.network</a>.</p><h3>Thanks for stopping by 😊💗</h3></div></div></body></html>
