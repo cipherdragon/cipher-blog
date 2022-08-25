@@ -93,6 +93,7 @@ body {
 .highlight {
     font-size: 16px;
     border: 1px dashed var(--bg2-color);
+    overflow-x: auto;
 }
 
 .commenting {
