@@ -184,12 +184,12 @@
     font-family: 'Courier New', Courier, monospace; 
     color: aquamarine; 
     width: 220px; 
-    height: 360px;
+    height: 380px;
     margin: 0;
     font-weight: bold;
 
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: calc(50% - 150px);
 
     transform-origin: 50% 50%;
