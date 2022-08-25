@@ -1,0 +1,17 @@
+{{ define "header-links" }}
+    <link rel="stylesheet" href="/css/single.css">
+{{ end }}
+
+{{ define "main" }}
+    <div class="page-title-container">
+        <div class="page-title-background"></div>
+        <div class="page-title-background-overlay"></div>
+        <h1 class="page-title">
+            {{.Title}}
+        </h1>
+        <p class="page-title__date">{{.Date.Format "Jan 02, 2006"}}</p>
+    </div>
+    <div class="page-content">
+        {{.Content}}
+    </div>
+{{ end }}

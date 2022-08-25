@@ -1,0 +1,67 @@
+.diary-quote {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    color: rgb(255, 158, 174);
+}
+
+.ball {
+    width: 100%;
+    position: relative;
+    height: 1px;
+}
+
+.ball::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--fg-color);
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+}
+
+.diary-entries {
+    margin: 20px 0;
+}
+
+.diary-entry {
+    border: 2px solid var(--fg-color);
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    margin: 20px 10px;
+}
+
+.diary-entry::before {
+    position: absolute;
+    content: '';
+    background-color: var(--fg-color);
+    width: 2px;
+    height: calc(100% + 40px);
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+.diary-entry .hr {
+    background-color: var(--fg-color);
+    height: 2px;
+    border: none;
+    margin: 10px 0;
+}
+
+.diary-end {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    text-align: center;
+    margin: 30px auto;
+    color: rgb(255, 158, 174);
+}

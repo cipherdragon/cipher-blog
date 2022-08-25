@@ -1,0 +1,38 @@
+{{ define "header-links" }}
+    <link rel="stylesheet" href="/css/lists.css">
+    {{ if eq .Section "blog" }}
+        <!-- styles for blog -->
+        <link rel="stylesheet" href="/css/blog.css">
+        <script src="/js/blog.js" defer></script>
+    {{ else if eq .Section "diary" }}
+        <!-- styles for diary -->
+        <link rel="stylesheet" href="/css/diary.css">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    {{ else if eq .Kind "term" }}
+        <!-- styles for term pages -->
+        <link rel="stylesheet" href="/css/blog.css">
+    {{ end }}
+{{ end }}
+
+{{ define "main" }}
+    <div class="page-title-container">
+        <div class="page-title-background"></div>
+        <div class="page-title-background-overlay"></div>
+        <h1 class="page-title">
+            {{ if eq .Kind "term" }}
+               Tag: #{{ .Title }}
+            {{ else }}
+                {{.Title}}
+            {{ end }}
+        </h1>
+    </div>
+    <div class="page-content">
+        {{ if eq .Section "blog" }}
+            {{- partial "blog.html" . -}}
+        {{ else if eq .Section "diary" }}
+            {{- partial "diary.html" . -}}
+        {{ else if eq .Kind "term" }}
+            {{ partial "term.html" . }}
+        {{ end }}
+    </div>
+{{ end }}

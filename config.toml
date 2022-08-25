@@ -1,0 +1,23 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'CipherBlog'
+
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[markup]
+    [markup.highlight]
+        lineNoStart = 1
+        lineNos = true
+        tabWidth = 4
+    
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
+[params]
+    author = 'Adeepa Gunathilake'
+    email = 'adeepagunathilake@gmail.com'
+    mastodon_handle = '@cipherdragon@mstdn.starnix.network'
+    mastodon_link = 'https://mstdn.starnix.network/@cipherdragon'
+    simple_footer = false

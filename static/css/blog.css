@@ -1,0 +1,115 @@
+.kaomoji-container {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.kaomoji {
+    margin: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgb(81, 81, 255);
+    display: grid;
+    place-content: center;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.blog-card-container {
+    display: grid;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 580px) {
+    .blog-card-container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 550px;
+    }
+
+    .kaomoji-container {
+        max-width: 550px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .blog-card-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 100%;
+    }
+
+    .kaomoji-container {
+        max-width: 100%;
+    }
+}
+
+.blog-card {
+    max-width: 250px;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 5px #12141a;
+    background-color: #262935;
+    border-radius: 5px;
+    border: 1px solid var(--bg2-color);
+    font-family: 'Cabin', sans-serif;
+}
+
+.blog-card__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 100px;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+}
+
+.blog-card__tags {
+    font-size: 16px;
+    margin: 10px 0;
+    height: 50px;
+    overflow: hidden;
+}
+
+a.tag, 
+a:visited.tag {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 2px;
+}
+
+.blog-card__description {
+    font-size: 16px;
+    color: #d3d5db;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.blog-card__description p:first-child,
+.blog-card__description p:last-child {
+    margin-bottom: 0;
+}
+
+
+.blog-card__permalink, 
+.blog-card__permalink:visited {
+    padding: 3px;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.blog-card .hr {
+    margin-bottom: 10px;
+}

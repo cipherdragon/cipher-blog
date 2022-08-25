@@ -1,0 +1,14 @@
+<div class="hr"></div>
+<div class="commenting">
+    {{ if eq (.Param "simple_footer") false }}
+        <p class="commenting">
+            If you have any comments, please email me or direct message me 
+            on my mastodon. Subscribe the blog using rss.
+            <br><br>
+            Email: {{ $.Site.Params.email }} <br>
+            Mastodon: 
+            <a href="{{ $.Site.Params.mastodon_link }}">{{ $.Site.Params.mastodon_handle }}</a>.
+        </p>
+    {{ end }}
+    <h3>Thanks for stopping by 😊💗</h3>
+</div>

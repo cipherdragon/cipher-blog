@@ -1,0 +1,16 @@
+<div class="diary-quote">
+    “What an odd thing a diary is: the things you omit are more important than those you put in.” 
+</div>
+
+<div class="ball"></div>
+{{ range (where .Site.RegularPages "Type" "diary" | first 3) }}
+    <div class="diary-entry">
+        {{ .Date.Format "Jan 02, 2006" }}
+        <div class="hr"></div>
+        {{ .Content }}
+    </div>
+{{ end }}
+<div class="ball"></div>
+<div class="diary-end">
+    the end
+</div>

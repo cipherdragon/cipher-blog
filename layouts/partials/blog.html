@@ -1,0 +1,32 @@
+<div class="kaomoji-container">
+    <div class="kaomoji" id="kaomoji">
+        (◕‿◕)
+    </div>
+</div>
+<div class="blog-card-container">
+{{ range (where .Site.RegularPages "Type" "blog") }}
+    <div class="blog-card">
+        <div class="blog-card__title">
+            {{ .Title }}
+        </div>
+        <div class="hr"></div>
+        <div class="blog-card__description">
+            <p>
+                {{ .Description }}
+            </p>
+            <p>
+                {{ .Date.Format "Jan 02, 2006" }}
+            </p>
+        </div>
+        <div class="blog-card__tags">
+            {{ range .Params.tags }}
+                <a href="/tags/{{ . | urlize }}" class="tag">#{{ . }}</a>
+            {{ end }}
+        </div>
+        <div class="hr"></div>
+        <a href="{{ .Permalink }}" class="blog-card__permalink">
+            Read now
+        </a>
+    </div>
+{{ end }}
+</div>
