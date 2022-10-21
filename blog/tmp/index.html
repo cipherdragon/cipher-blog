@@ -1,0 +1,78 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Tmp | CipherBlog</title><meta name=description content><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><a rel=me href=https://mstdn.starnix.network/@cipherdragon style=display:none></a><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>The CipherBlog</a></div><nav><a href=/about>About</a>
+<a href=/contact>Contact</a>
+<a href=/blog>Blog</a>
+<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><div class=page-title-background></div><div class=page-title-background-overlay></div><h1 class=page-title>Tmp</h1><p class=page-title__authorship>Oct 21, 2022 | Adeepa Gunathilake</p></div><div class=page-content><pre tabindex=0><code>START
+    DECLARE STRING nic_number
+    DECLARE INT nic_length
+
+    DECLARE BOOLEAN valid_voter = TRUE
+    DECLARE STRING gender
+    DECLARE INT birth_year
+    DECLARE INT age
+    DECLARE INT birthday_of_year
+
+    GET NIC number as nic_number
+    nic_length = length of nic_number
+
+    IF nic_length == 10 THEN
+        nic_birth_year = first two characters of nic_number
+        nic_birthday_of_year = 3rd to 5th characters (inclusive) of nic_number
+        vote_validity_letter = 10th character of nic_number
+
+        birth_year = (convert nic_birth_year to INTEGER) + 1900
+        birthday_of_year = convert nic_birthday_of_year to INTEGER
+
+
+        IF vote_validity_letter == &#34;X&#34; THEN
+            valid_voter = FALSE
+        END IF
+
+    ELSE IF nic_length == 12 THEN
+        nic_birth_year = first four characters of nic_number
+        nic_birthday_of_year = 5th to 7th characters (inclusive) of nic_number
+
+        birth_year = convert nic_birth_year to INTEGER
+        birthday_of_year = convert nic_birthday_of_year to INTEGER
+
+        IF birthday_of_year &gt; 500 THEN
+            gender = &#34;FEMALE&#34;
+        ELSE
+            gender = &#34;MALE&#34;
+        END IF
+
+        age = (current year) - birth_year
+
+    ELSE
+        DISPLAY &#34;Entered NIC is not valid&#34;
+        STOP
+    END IF
+
+    IF birthday_of_year &gt; 500 THEN
+        gender = &#34;FEMALE&#34;
+    ELSE
+        gender = &#34;MALE&#34;
+    END IF
+    age = (current year) - birth_year
+
+    IF valid_voter != FALSE THEN
+        IF age &lt; 18 THEN
+            valid_voter = FALSE
+        ELSE
+            valid_voter = TRUE
+        END IF
+    END IF
+
+    IF valid_voter == TRUE THEN
+        DISPLAY &#34;You are a valid voter&#34;
+    ELSE
+        DISPLAY &#34;You are an invalid voter&#34;
+    END IF
+
+    voter_data_file = Create a file with nic_number as the name    
+
+    APPEND STRING (&#34;nic : &#34;, nic_number) to voter_data_file
+    APPEND STRING (&#34;birth_year : &#34;, birth_year) to voter_data_file
+    APPEND STRING (&#34;gender : &#34;, gender) to voter_data_file
+    APPEND STRING (&#34;is_able_to_vote : &#34;, valid_voter) to voter_data_file
+STOP
+</code></pre></div><div class=hr></div><div class=commenting><h3>Thanks for stopping by 💗</h3></div></div></body></html>
