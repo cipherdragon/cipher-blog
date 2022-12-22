@@ -13,14 +13,14 @@ have switches. Computers too have mechanisms to let the user control it. Talking
 to your phone is one way, but the most prominent mediums of instructing a
 computer are CLI and GUI.</p><p>GUI, aka the Graphical User Interface is what everyone uses to instruct
 computers. User click, scroll and type on graphical items like buttons, icons
-etc. to instruct the computer. You should know, because you must have used GUIs.</p><p>Now comes the fun part, the CLI. User instruct the computer using CLI by typing
+and text boxes etc to instruct the computer.</p><p>Now comes the fun part, the CLI. User instruct the computer using CLI by typing
 exactly what they want. Computer should know what the user typed. That
 means, user should type only the &ldquo;commands&rdquo; the computer know. Any other
-nonsense text will be thrown away.</p><div class=hr></div><p><img src=/img/teletype.jpg alt="Teletype Model 33"></p><p>What you saw above is called a teletype (model 33) (aka, a TTY). This is how
+nonsense text will be thrown away.</p><div class=hr></div><p><img src=/img/teletype.jpg alt="Teletype Model 33"></p><p>What you saw above is called a teletype(aka, a TTY) [model 33]. This is how
 computers output the information before screens and monitors were invented. The
 computer is connected to this thing using wires. When the computer wants to tell
 something to the user, it send the message to this teletype(TTY). Then the
-teletype prints that message on paper. When the user want to send a message (or
+teletype prints that message on paper. When the user wants to send a message (or
 instruction) to the computer, user type it on the keyboard of that TTY. Then
 the TTY transmits it to the computer.</p><p>For example, imagine the user wants to log into their user account. User types
 the relevant command for login on the keyboard. Then the computer prints a
@@ -28,38 +28,39 @@ message like &ldquo;Enter the password>&rdquo; on paper via the TTY. User respon
 typing keys on the TTY. Instructing computer in text, using commands and getting
 responses back in text. <strong>That is the command line interface.</strong></p><p>That&rsquo;s how people did computing several decades ago.</p><p>Now, note this well because we need this fact later. In earlier days, only the
 big mainframe computers were used. No personal computers. Teletype is just the
-input/output device. Mainframe is big. Companies only had one mainframe, but
-many users used it by having multiple teletypes connected to the same mainframe.
-So the TTY is like an end to the mainframe. <strong>A terminal</strong>. Calling it a
-terminal makes sense right?</p><div class=hr></div><p>Now, back to the modern times. Here&rsquo;s how a terminal looks like in modern times.</p><p><img src=/img/terminal-modern.jpg alt="Bash terminal on a fedora 36"></p><p>But that terminal looks nothing like the previous model 33 teletype terminal.
+input/output device. Mainframe is the computer. It&rsquo;s a big computer. Companies
+only had one mainframe, but many users used it by having multiple teletypes
+connected to the same mainframe. So the TTY is like an end point to the
+mainframe. <strong>A terminal</strong> to the mainframe. Calling it a terminal makes sense
+right?</p><div class=hr></div><p>Now, back to the modern times. Here&rsquo;s a modern terminal.</p><p><img src=/img/terminal-modern.jpg alt="Bash terminal on a fedora 36"></p><p>But that terminal looks nothing like the previous model 33 teletype terminal.
 So why it is called a terminal? Well, even though we call it a
 terminal for our ease, that piece of software is not a terminal, but a
 <strong>&ldquo;terminal emulator&rdquo;</strong>. Why it&rsquo;s called a &ldquo;terminal emulator&rdquo;? Because it
 emulates the old &ldquo;terminal.&rdquo; Most modern terminal emulator software emulates the
 old DEC VT100 terminal.</p><p><img src=/img/VT100-terminal.jpg alt="DEC VT100 terminal"></p><p>Above image is a <strong>DEC VT100</strong> terminal. It is what the most modern terminal
-emulator softwares emulate. It does not print computer output on paper as in
+emulator software emulates. It does not print computer output on paper as in
 above Model 33 teletype. Instead, it displays the output in the monitor screen.
 Note that it still is not a full computer, it&rsquo;s just the input/output device.
 The difference from model 33 TTY is that it replaced paper printer with a
 monitor. Therefore, teletypes like VT100 is known as <strong>Video Teletypes</strong>.</p><p>TTY is not capable of processing data. It&rsquo;s not the computer, it&rsquo;s just the
 input/output device. It should be connected to a computer and all computations
-and data processing is done by that computer.</p><p>Modern terminals emulate the old TTYs. So obviously, terminal emulator software
-is not capable of doing any calculations and data processing. So what is repsonsible
-for the computational part in modern terminal emulators? Answer is, <strong>&ldquo;Shells&rdquo;</strong>.</p><p>A shell is a piece of software that is responsible for understanding the input
+and data processing is done by that computer.</p><p>Modern terminals emulate old TTYs. So obviously, terminal emulator software
+is not capable of doing any calculations and data processing. So what is
+repsonsible for the computational part in modern terminal emulators? It is the
+<strong>&ldquo;Shell&rdquo;</strong>.</p><p>A shell is a piece of software that is responsible for understanding the input
 user enters into the terminal and executes the task user asked for. When user
 enters something into the terminal emulator, terminal emulator sends that input to
-the shell. Then shell process that input data and sends a sensible response back
+the shell. Then shell processes that input data and sends a sensible response back
 to the terminal. Terminal then displays it to the user.</p><p>Generally, user enters commands to the terminal. Terminal sends them to the
 shell. Shell then executes the command. While the command is executing, that
-particular command gets the control of the terminal. Command can output text to
-the terminal and gets input from the terminal. Once the command is executed,
-shell takes the control of the terminal again and waits for another command.
-If the user enters a command that is not existing in the computer, shell will
-inform that the command does not exist. Here&rsquo;s an example, a terminal running
-python shell.</p><p><img src=/img/python-shell.png alt="Python shell"></p><p>In above example, the black background and white color text is created by the
+particular command gets the full control of the terminal. Command can output
+text to the terminal and can get input from the terminal. Once the command is
+executed, shell takes back the control of the terminal again and waits for another
+command. If the user enters a command that is not existing in the computer,
+shell will inform that the command does not exist.</p><p>Here&rsquo;s an example, a terminal running python shell.</p><p><img src=/img/python-shell.png alt="Python shell"></p><p>In above example, the black background and white color text is created by the
 terminal emulator software. Terminal emulator sends whatever I typed to the
-python shell. In this example, the text <code>print("Hello world")</code> is an input I
-entered to the terminal. Terminal sent that to the python shell. Then python
+python shell. In this example, the text <code>print("Hello world")</code> is the input I
+entered to the terminal. Terminal sent it to the python shell. Then the python
 shell executed that input and provided a sensible output. In this case, the text
 <code>"Hello world"</code>.</p><p>Note: Even though I used python shell for above example, python is a programming
 language. So instead of running commands, user have to enter python code to the
@@ -68,7 +69,7 @@ day to day terminal usage. I used it above just as an example.</p><p>There are m
 <code>bash</code> shell is the default shell in most linux operating systems and old mac
 versions. <code>zsh</code> is the default shell in Mac OS. Some other popular shells are
 listed below.</p><ul><li>Bash</li><li>Zsh</li><li>csh (C Shell)</li><li>ksh (Korn Shell)</li><li>Fish shell</li></ul><p>In windows however, things are a bit different. <code>cmd.exe</code> the windows command
-prompt is act as both terminal emulator and also the shell.</p><p>Now that we know what a terminal and a shell means, let&rsquo;s look into &ldquo;commands.&rdquo;</p><p>To use a command line interface properly, user should enter commands to the
+prompt acts as both terminal emulator and also the shell.</p><div class=hr></div><p>Now that we know what a terminal and a shell means, let&rsquo;s look into &ldquo;commands.&rdquo;</p><p>To use a command line interface properly, user should enter commands to the
 terminal. These commands must be valid commands. If not, the shell will greet
 the user with an error message like &ldquo;command not found.&rdquo;</p><p>These commands are nothing but programs installed in the computer. Entering a
 command to the terminal is same as double clicking and opening a software in a
@@ -84,11 +85,12 @@ to the shell. Shell then identifies that given command and runs it. Shell passes
 the parameters to the command when executing the command.</p><p>When the command is running, command has the full control of the terminal.
 Hence, it outputs text into the terminal and also it is possible for the command
 to prompt for user input too. Commands can also run successfully without even
-displayin anything to the user. For example, the command <code>mv</code>, which stands for
+displaying anything to the user. For example, the command <code>mv</code>, which stands for
 moving a file from one location to another moves the requested file and exit,
-without printing anything to the screen.</p><p>That is the end of this article. Here&rsquo;s a summary.</p><ul><li>Terminal is a piece of software that creates a textual input output
+without printing anything to the screen.</p><div class=hr></div><p>That is the end of this article. Here&rsquo;s a summary.</p><ul><li>Terminal is a piece of software that creates a textual input output
 environment. Programs can use that environment to take user input and also to
 display outputs to the user.</li><li>Shell is a special software which executes the commands user requested to run.
 It acts as a middle man between respective commands and the user.</li><li>Commands are programs installed in the computer. These programs most of the
 times does not have a graphical interface. Instead, they are meant to use in a
-command line interface.</li></ul></div><div class=hr></div><div class=commenting><h3>Thanks for stopping by 💗</h3></div></div></body></html>
+command line interface.</li><li>Mac OS and Linux based operating systems use same shell software. Hence, the
+terminal syntax is common. Windows command prompt and powershell are outliers.</li></ul></div><div class=hr></div><div class=commenting><h3>Thanks for stopping by 💗</h3></div></div></body></html>
