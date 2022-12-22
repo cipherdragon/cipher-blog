@@ -30,7 +30,7 @@ computer are CLI and GUI.
 
 GUI, aka the Graphical User Interface is what everyone uses to instruct
 computers. User click, scroll and type on graphical items like buttons, icons
-etc. to instruct the computer. You should know, because you must have used GUIs.
+and text boxes etc to instruct the computer.
 
 Now comes the fun part, the CLI. User instruct the computer using CLI by typing
 exactly what they want. Computer should know what the user typed. That
@@ -41,11 +41,11 @@ nonsense text will be thrown away.
 
 ![Teletype Model 33](/img/teletype.jpg)
 
-What you saw above is called a teletype (model 33) (aka, a TTY). This is how
+What you saw above is called a teletype(aka, a TTY) [model 33]. This is how
 computers output the information before screens and monitors were invented. The
 computer is connected to this thing using wires. When the computer wants to tell
 something to the user, it send the message to this teletype(TTY).  Then the
-teletype prints that message on paper. When the user want to send a message (or
+teletype prints that message on paper. When the user wants to send a message (or
 instruction) to the computer, user type it on the keyboard of that TTY.  Then
 the TTY transmits it to the computer.
 
@@ -59,14 +59,15 @@ That's how people did computing several decades ago.
 
 Now, note this well because we need this fact later. In earlier days, only the
 big mainframe computers were used. No personal computers. Teletype is just the
-input/output device. Mainframe is big. Companies only had one mainframe, but
-many users used it by having multiple teletypes connected to the same mainframe.
-So the TTY is like an end to the mainframe. **A terminal**. Calling it a
-terminal makes sense right?
+input/output device. Mainframe is the computer. It's a big computer. Companies
+only had one mainframe, but many users used it by having multiple teletypes
+connected to the same mainframe.  So the TTY is like an end point to the
+mainframe. **A terminal** to the mainframe. Calling it a terminal makes sense
+right?
 
 <div class="hr"></div>
 
-Now, back to the modern times. Here's how a terminal looks like in modern times.
+Now, back to the modern times. Here's a modern terminal.
 
 ![Bash terminal on a fedora 36](/img/terminal-modern.jpg)
 
@@ -80,7 +81,7 @@ old DEC VT100 terminal.
 ![DEC VT100 terminal](/img/VT100-terminal.jpg)
 
 Above image is a **DEC VT100** terminal. It is what the most modern terminal
-emulator softwares emulate. It does not print computer output on paper as in
+emulator software emulates. It does not print computer output on paper as in
 above Model 33 teletype. Instead, it displays the output in the monitor screen.
 Note that it still is not a full computer, it's just the input/output device.
 The difference from model 33 TTY is that it replaced paper printer with a
@@ -90,31 +91,33 @@ TTY is not capable of processing data. It's not the computer, it's just the
 input/output device.  It should be connected to a computer and all computations
 and data processing is done by that computer.
 
-Modern terminals emulate the old TTYs. So obviously, terminal emulator software
-is not capable of doing any calculations and data processing. So what is repsonsible
-for the computational part in modern terminal emulators? Answer is, **"Shells"**.
+Modern terminals emulate old TTYs. So obviously, terminal emulator software
+is not capable of doing any calculations and data processing. So what is 
+repsonsible for the computational part in modern terminal emulators? It is the 
+**"Shell"**.
 
 A shell is a piece of software that is responsible for understanding the input
 user enters into the terminal and executes the task user asked for. When user
 enters something into the terminal emulator, terminal emulator sends that input to
-the shell. Then shell process that input data and sends a sensible response back
+the shell. Then shell processes that input data and sends a sensible response back
 to the terminal. Terminal then displays it to the user. 
 
 Generally, user enters commands to the terminal. Terminal sends them to the
 shell.  Shell then executes the command. While the command is executing, that
-particular command gets the control of the terminal. Command can output text to
-the terminal and gets input from the terminal. Once the command is executed,
-shell takes the control of the terminal again and waits for another command.
-If the user enters a command that is not existing in the computer, shell will
-inform that the command does not exist. Here's an example, a terminal running
-python shell.
+particular command gets the full control of the terminal. Command can output
+text to the terminal and can get input from the terminal. Once the command is
+executed, shell takes back the control of the terminal again and waits for another
+command.  If the user enters a command that is not existing in the computer,
+shell will inform that the command does not exist. 
+
+Here's an example, a terminal running python shell.
 
 ![Python shell](/img/python-shell.png)
 
 In above example, the black background and white color text is created by the 
 terminal emulator software. Terminal emulator sends whatever I typed to the
-python shell.  In this example, the text `print("Hello world")` is an input I
-entered to the terminal.  Terminal sent that to the python shell. Then python
+python shell.  In this example, the text `print("Hello world")` is the input I
+entered to the terminal.  Terminal sent it to the python shell. Then the python
 shell executed that input and provided a sensible output. In this case, the text
 `"Hello world"`.
 
@@ -135,7 +138,9 @@ listed below.
 + Fish shell
 
 In windows however, things are a bit different. `cmd.exe` the windows command
-prompt is act as both terminal emulator and also the shell.
+prompt acts as both terminal emulator and also the shell.
+
+<div class="hr"></div>
 
 Now that we know what a terminal and a shell means, let's look into "commands."
 
@@ -165,9 +170,11 @@ the parameters to the command when executing the command.
 When the command is running, command has the full control of  the terminal.
 Hence, it outputs text into the terminal and also it is possible for the command
 to prompt for user input too. Commands can also run successfully without even
-displayin anything to the user.  For example, the command `mv`, which stands for
+displaying anything to the user.  For example, the command `mv`, which stands for
 moving a file from one location to another moves the requested file and exit,
 without printing anything to the screen.
+
+<div class="hr"></div>
 
 That is the end of this article. Here's a summary.
 
@@ -179,3 +186,5 @@ It acts as a middle man between respective commands and the user.
 + Commands are programs installed in the computer. These programs most of the
 times does not have a graphical interface. Instead, they are meant to use in a
 command line interface.
++ Mac OS and Linux based operating systems use same shell software. Hence, the
+terminal syntax is common. Windows command prompt and powershell are outliers.
