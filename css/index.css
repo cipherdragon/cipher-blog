@@ -156,39 +156,6 @@
     min-height: 150px;
 }
 
-.ghost-container {
-    height: 500px;
-    position: relative;
-}
-
-.ghost-container h1 {
-    text-align: center;
-    color: var(--fg-color);
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-.ghost {
-    font-family: 'Courier New', Courier, monospace; 
-    color: aquamarine; 
-    width: 220px; 
-    height: 380px;
-    margin: 0;
-    font-weight: bold;
-
-    position: absolute;
-    top: 40px;
-    left: calc(50% - 150px);
-
-    transform-origin: 50% 50%;
-}
-
-.ghost-path-svg {
-    position: absolute;
-    transform: translateX(-50%);
-    fill: none;
-    opacity: 0;
-}
-
 .ghost-quote {
     font-family: 'Cabin', sans-serif;
     font-size: 20px;
@@ -257,7 +224,8 @@
 
 .diary-desc {
     max-width: 400px;
-    color: #d3d5db;
+    color: #f8f9fc;
+    font-weight: bold;
     margin: 0 auto;
     text-align: center;
 }
