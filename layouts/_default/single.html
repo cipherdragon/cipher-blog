@@ -7,9 +7,12 @@
         <h1 class="page-title">
             {{.Title}}
         </h1>
-        <p class="page-title__authorship">{{.Date.Format "Jan 02, 2006"}} | {{ .Param "author" }}</p>
     </div>
     <div class="page-content">
+        <p class="author-data">
+            Date: {{.Date.Format "Jan 02, 2006"}} <br>
+            Author: {{ .Param "author" }} <br>
+        </p>
         {{.Content}}
     </div>
 {{ end }}

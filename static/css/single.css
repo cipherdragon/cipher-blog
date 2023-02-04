@@ -20,17 +20,10 @@
     margin: 0;
 }
 
-.page-title__authorship {
-    z-index: 30;
-    text-align: center;
+.author-data {
+    margin-top: 0;
     font-family: 'Fira Sans', sans-serif;
-    font-size: 14px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 10px;
-    font-weight: bold;
-    color: var(--bg-light-color);
+    color: #b4d6fd;
 }
 
 .page-content {
