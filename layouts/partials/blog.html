@@ -1,27 +1,12 @@
-<div class="blog-card-container">
+<ul class="blog-card-container">
 {{ range (where .Site.RegularPages "Type" "blog") }}
-    <div class="blog-card">
-        <div class="blog-card__title">
+    <li class="blog-card">
+        <a href="{{ .Permalink }}" class="blog-card__title blog-card__permalink">
             {{ .Title }}
-        </div>
-        <div class="hr"></div>
-        <div class="blog-card__description">
-            <p>
-                {{ .Description }}
-            </p>
-            <p>
-                {{ .Date.Format "Jan 02, 2006" }}
-            </p>
-        </div>
-        <div class="blog-card__tags">
-            {{ range .Params.tags }}
-                <a href="/tags/{{ . | urlize }}" class="tag">#{{ . }}</a>
-            {{ end }}
-        </div>
-        <div class="hr"></div>
-        <a href="{{ .Permalink }}" class="blog-card__permalink">
-            Read now
         </a>
-    </div>
+        <span style="font-size: 14px;">
+            ({{ .Date.Format "2006-01-02" }})
+        </span>
+    </li>
 {{ end }}
-</div>
+</ul>
