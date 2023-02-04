@@ -3,6 +3,7 @@ title: "About Me"
 date: 2022-08-25T03:13:11+05:30
 draft: false
 simple_footer: true
+type: about
 ---
 
 I'm Adeepa Gunathilake and here's my "about" page. I don't think anyone would
