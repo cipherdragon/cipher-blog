@@ -67,14 +67,21 @@ p > code {
     border: 1px dotted var(--bg2-color);
 }
 
-.page-content img {
+.page-content .md-image {
+    width: 100%;
+    background-color: #171a1d;
+    border: 1px solid var(--bg2-color);
+    box-shadow: 1px 2px 5px rgb(13, 14, 19);
+}
+
+.page-content .md-image img {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
     display: block;
-    border: 1px solid var(--bg2-color);
-    border-radius: 5px;
-    box-shadow: 1px 2px 5px rgb(13, 14, 19);
+    border-color: #4b5868;
+    border-style: solid;
+    border-width: 0 1px 0 1px;
 }
 
 .page-content hr {
