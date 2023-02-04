@@ -1,7 +1,7 @@
 ---
 title: "Normie Life Is Cringe, that's 2022"
 date: 2022-12-31T02:10:18+05:30
-draft: false
+draft: true 
 description: "Me ranting about modern social life I saw in 2022"
 tags: ["life"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "I don't trust computers. Am I a caveman?"
 date: 2022-07-25T02:51:58+05:30
-draft: false
+draft: true
 description: "Me ranting about why trusting computers is dumb. Don't read this."
 tags: ["trash", "life", "tech"]
 ---
