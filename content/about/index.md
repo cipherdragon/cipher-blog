@@ -6,44 +6,34 @@ simple_footer: true
 type: about
 ---
 
-I'm Adeepa Gunathilake and here's my "about" page. I don't think anyone would
-even read this, but writing anyway. If you're looking to social engineer me, this
-section might help you. So take notes :)
+Hello world!
 
-![death-rode-a-pale-horse](/img/death-rode-pale-horse-cat-on-dog-2.jpg)
+Last time I wrote my about page is about 5 months ago. Since then
+my social personality has been changed a lot. So I'm re-writing.
 
-I am just a curious student. I love making computers go beep boop. I was born
-in mid August some year near 2000 and ever since then, I try to figure out how
-this world works.  Law and justice system, economy, language and different
-cultures make me scratch the curious part of my mind. I have a habbit of not
-completing my hobby coding projects.
+I'm Adeepa Gunathilake. Currently a BSc. Artificial Intelligence and Data Science
+undergraduate. I'm currently in the third decade of my life. 
+
+My social life is not that strong, but I must admit that I became a little bit
+social in past few months. I use no social media at all. I used to use mastodon
+but not much active now. This website is the only major place I participate in
+the internet other than on github and stackoverflow.
 
 ## Things I love to do
 
-+ Sleeping 
-+ Swimming 
 + Cycling 
-+ Watching the sea 
 + Programming 
-+ criticizing memes on reddit 
-+ Spending time with my friends
++ Sleeping 
++ Spending time with my close friends
++ Enjoying nature
 
-About that last point: I only consider handful amount of people as my friends.
-So spending time with them means spending time with that close little circle of
-about 10 to 20 friendly people.
+Because I wasn't that much social, I used to spend my time at home, staring at
+a computer screen, coding things. Programming is my hobby. Not just programming,
+engaging in activities related to computer science rewarded me a lot of dopamine.
+I spent so much hours coding unfinished useless hobby projects and learning many
+things related to computer science just because it pleases my mind.
 
-## Things I hate
-
-+ Tiktok
-+ Facebook and instagram
-+ History books
-+ Taking selfies
-+ All people **<u>other than</u>** my family members, cousins, my teachers, my
-close group of friends, people I respect and linux users.
-
-About that last point: I don't hate people, I just simply don't like them. If
-you met me in real life and my interations with you are friendly, that means you
-are in the "people I respect" category.
+![death rode pale horse cat meme](/img/death-rode-pale-horse-cat-on-dog-2.jpg)
 
 ## Youtube channels I enjoy watching
 
@@ -54,22 +44,6 @@ are in the "people I respect" category.
 + Ben Eater
 + James Jani
 + Mystery Recapped
-
-I'm a linux user so this page would be incomplete if I don't write about
-software.
-
-+ My current OS: Linux Mint (desktop) and Fedora (laptop)
-
-## Software I love
-
-+ vim
-+ vs code
-+ firefox
-+ ranger
-+ keepassxc
-+ veracrypt
-+ ffmpeg
-+ brave-browser
 
 ---
 
@@ -82,9 +56,7 @@ software.
 > Sun tzu, The Art of War
 
 They say knowledge is the power. That's true. The more you know a person, the
-more you can control them. That's why data-mining companies like facebook,
-bytedance and google control the modern world. That's the exact same reason why
-we should learn to lie.
+more you can control them.
 
 So as you may guessed by now, some facts on this page are just disinformation.
 
