@@ -1,4 +1,5 @@
 {{ define "header-links" }}
+    <link rel="stylesheet" href="/css/blog.css">
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/anime.min.js"></script>
     <script src="/js/index.js" defer></script>
@@ -82,29 +83,19 @@
     <div class="blog-intro">
         <div class="blog-intro__line-main">
             <p>
-                Here's something more cool.
-                The taste of my mind. 
-                Here's the newest 3 blog posts.
+                Here are my writings. Visit blog to see more!
             </p>
         </div>
     </div>
-    
-    {{ range (where .Site.RegularPages "Type" "blog" | first 3) }}
-        <div class="blog-card">
-            <div class="blog-card__title">
+    <ul class="blog-card-container">
+    {{ range (where .Site.RegularPages "Type" "blog" | first 5) }}
+        <li class="blog-card">
+            <a href="{{ .Permalink }}" class="blog-card__title blog-card__permalink">
                 {{ .Title }}
-            </div>
-            <div class="blog-card__description">
-                {{ .Description }} 
-                <br><br>
-                {{ .Date.Format "Jan 02, 2006" }}
-            </div>
-            <div class="hr" style="margin: 5px 0;"></div>
-            <a href="{{ .Permalink }}" class="blog-card__permalink">
-                Read now
             </a>
-        </div>
-    {{end}}
+        </li>
+    {{ end }}
+    </ul>
     <a href="/blog" class="explore_blog">Explore the blog</a>
     <div class="hr"></div>
     <div class="ghost-container">
