@@ -6,10 +6,8 @@
     min-height: min(calc(80vh - 120px), 400px);
     min-height: 100px;
     border-bottom: 1px dashed var(--bg2-color);
-    font-family: 'Josefin Sans', sans-serif;
-    /* font-family: 'Fira Sans', sans-serif; */
-    /* font-family: 'Fira Code', monospace; */
     margin-bottom: 10px;
+    font-family: 'Fira Code', monospace;
     padding: 10px;
     box-sizing: border-box;
     position: relative;
@@ -31,5 +29,4 @@
     line-height: 1.4;
     font-size: 18px;
     font-family: 'Fira Code', monospace;
-    /* font-family: 'Fira Sans', sans-serif; */
 }

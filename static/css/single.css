@@ -4,9 +4,9 @@
     place-content: center;
     width: 100%;
     border-bottom: 1px dashed var(--bg2-color);
-    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Josefin Sans', sans-serif; */
     /* font-family: 'Fira Sans', sans-serif; */
-    /* font-family: 'Fira Code', monospace; */
+    font-family: 'Fira Code', monospace;
     padding: 10px;
     box-sizing: border-box;
     position: relative;
@@ -38,9 +38,7 @@
     padding: 10px;
     line-height: 1.7;
     font-size: 20px;
-    /* font-family: 'Fira Code', monospace; */
-    font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Fira Sans', sans-serif; */
+    font-family: 'Fira Code', monospace;
 }
 
 .page-content h1 {
