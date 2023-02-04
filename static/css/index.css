@@ -224,7 +224,8 @@
 
 .diary-desc {
     max-width: 400px;
-    color: #d3d5db;
+    color: #f8f9fc;
+    font-weight: bold;
     margin: 0 auto;
     text-align: center;
 }
