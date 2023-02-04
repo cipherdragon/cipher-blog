@@ -3,63 +3,27 @@
     display: grid;
     place-content: center;
     width: 100%;
-    min-height: min(calc(80vh - 120px), 400px);
     border-bottom: 1px dashed var(--bg2-color);
-    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Josefin Sans', sans-serif; */
     /* font-family: 'Fira Sans', sans-serif; */
-    /* font-family: 'Fira Code', monospace; */
+    font-family: 'Fira Code', monospace;
     padding: 10px;
     box-sizing: border-box;
     position: relative;
 }
 
-.page-title-background,
-.page-title-background-overlay {
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    border-radius: 10px;
-    position: absolute;
-}
-
-.page-title-background {
-    background-color: transparent;
-    background-image: url("/img/default-post-img.jpg");
-    background-size: cover;
-    background-position: center;
-    z-index: 10;
-}
-
-.page-title-background-overlay {
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    background-color: var(--bg-color);
-    opacity: 0.7;
-    backdrop-filter: blur(2px);
-    z-index: 20;
-}
-
 .page-title {
-    /* max-width: 300px; */
     text-align: center;
     font-size: 38px;
     z-index: 30;
     position: relative;
+    margin: 0;
 }
 
-.page-title__authorship {
-    z-index: 30;
-    text-align: center;
+.author-data {
+    margin-top: 0;
     font-family: 'Fira Sans', sans-serif;
-    font-size: 14px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 10px;
-    font-weight: bold;
-    color: var(--bg-light-color);
+    color: #b4d6fd;
 }
 
 .page-content {
@@ -67,9 +31,7 @@
     padding: 10px;
     line-height: 1.7;
     font-size: 20px;
-    /* font-family: 'Fira Code', monospace; */
-    font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Fira Sans', sans-serif; */
+    font-family: 'Fira Code', monospace;
 }
 
 .page-content h1 {
@@ -105,14 +67,21 @@ p > code {
     border: 1px dotted var(--bg2-color);
 }
 
-.page-content img {
+.page-content .md-image {
+    width: 100%;
+    background-color: #171a1d;
+    border: 1px solid var(--bg2-color);
+    box-shadow: 1px 2px 5px rgb(13, 14, 19);
+}
+
+.page-content .md-image img {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
     display: block;
-    border: 1px solid var(--bg2-color);
-    border-radius: 5px;
-    box-shadow: 1px 2px 5px rgb(13, 14, 19);
+    border-color: #4b5868;
+    border-style: solid;
+    border-width: 0 1px 0 1px;
 }
 
 .page-content hr {

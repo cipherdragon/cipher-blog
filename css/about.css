@@ -1,0 +1,14 @@
+.quote {
+    color: rgb(250, 145, 162);
+    font-family: 'Courgette', cursive;
+    font-size: 28px;
+    font-weight: bold;
+    max-width: 480px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 0 10px;
+}
+
+p:first-child {
+    margin-top: 0px;
+}

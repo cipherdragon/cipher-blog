@@ -1,7 +1,7 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>All About CLI | CipherBlog</title><meta name=description content="What is a Command Line Interface? What does shell and the means?"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><a rel=me href=https://mstdn.starnix.network/@cipherdragon style=display:none></a><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>The CipherBlog</a></div><nav><a href=/about>About</a>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>All About CLI | CipherBlog</title><meta name=description content="What is a Command Line Interface? What does shell and the means?"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&family=Courgette&family=Pacifico&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><a rel=me href=https://mstdn.starnix.network/@cipherdragon style=display:none></a><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>DumbCooks</a></div><nav><a href=/about>About</a>
 <a href=/contact>Contact</a>
 <a href=/blog>Blog</a>
-<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><div class=page-title-background></div><div class=page-title-background-overlay></div><h1 class=page-title>All About CLI</h1><p class=page-title__authorship>Dec 18, 2022 | Adeepa Gunathilake</p></div><div class=page-content><p>This article will be on &ldquo;Command Line Interface,&rdquo; (CLI in short) aka the black
+<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><h1 class=page-title>All About CLI</h1></div><div class=page-content><p class=author-data>Date: Dec 18, 2022<br>Author: Adeepa Gunathilake<br></p><p>This article will be on &ldquo;Command Line Interface,&rdquo; (CLI in short) aka the black
 box hackers type into using blue or green text in movies. Terminal, console and
 command prompt are other common words too.</p><p>If you think there&rsquo;s no reason for you to learn about CLI in 2022 because now
 you have glowing user interfaces, trust me, you&rsquo;re wrong, you&rsquo;ll only be a
@@ -16,7 +16,7 @@ computers. User click, scroll and type on graphical items like buttons, icons
 and text boxes etc to instruct the computer.</p><p>Now comes the fun part, the CLI. User instruct the computer using CLI by typing
 exactly what they want. Computer should know what the user typed. That
 means, user should type only the &ldquo;commands&rdquo; the computer know. Any other
-nonsense text will be thrown away.</p><div class=hr></div><p><img src=/img/teletype.jpg alt="Teletype Model 33"></p><p>What you saw above is called a teletype(aka, a TTY) [model 33]. This is how
+nonsense text will be thrown away.</p><div class=hr></div><p><div class=md-image><img src=/img/teletype.jpg alt="Teletype Model 33"></div></p><p>What you saw above is called a teletype(aka, a TTY) [model 33]. This is how
 computers output the information before screens and monitors were invented. The
 computer is connected to this thing using wires. When the computer wants to tell
 something to the user, it send the message to this teletype(TTY). Then the
@@ -32,12 +32,12 @@ input/output device. Mainframe is the computer. It&rsquo;s a big computer. Compa
 only had one mainframe, but many users used it by having multiple teletypes
 connected to the same mainframe. So the TTY is like an end point to the
 mainframe. <strong>A terminal</strong> to the mainframe. Calling it a terminal makes sense
-right?</p><div class=hr></div><p>Now, back to the modern times. Here&rsquo;s a modern terminal.</p><p><img src=/img/terminal-modern.jpg alt="Bash terminal on a fedora 36"></p><p>But that terminal looks nothing like the previous model 33 teletype terminal.
+right?</p><div class=hr></div><p>Now, back to the modern times. Here&rsquo;s a modern terminal.</p><p><div class=md-image><img src=/img/terminal-modern.jpg alt="Bash terminal on a fedora 36"></div></p><p>But that terminal looks nothing like the previous model 33 teletype terminal.
 So why it is called a terminal? Well, even though we call it a
 terminal for our ease, that piece of software is not a terminal, but a
 <strong>&ldquo;terminal emulator&rdquo;</strong>. Why it&rsquo;s called a &ldquo;terminal emulator&rdquo;? Because it
 emulates the old &ldquo;terminal.&rdquo; Most modern terminal emulator software emulates the
-old DEC VT100 terminal.</p><p><img src=/img/VT100-terminal.jpg alt="DEC VT100 terminal"></p><p>Above image is a <strong>DEC VT100</strong> terminal. It is what the most modern terminal
+old DEC VT100 terminal.</p><p><div class=md-image><img src=/img/VT100-terminal.jpg alt="DEC VT100 terminal"></div></p><p>Above image is a <strong>DEC VT100</strong> terminal. It is what the most modern terminal
 emulator software emulates. It does not print computer output on paper as in
 above Model 33 teletype. Instead, it displays the output in the monitor screen.
 Note that it still is not a full computer, it&rsquo;s just the input/output device.
@@ -57,7 +57,7 @@ particular command gets the full control of the terminal. Command can output
 text to the terminal and can get input from the terminal. Once the command is
 executed, shell takes back the control of the terminal again and waits for another
 command. If the user enters a command that is not existing in the computer,
-shell will inform that the command does not exist.</p><p>Here&rsquo;s an example, a terminal running python shell.</p><p><img src=/img/python-shell.png alt="Python shell"></p><p>In above example, the black background and white color text is created by the
+shell will inform that the command does not exist.</p><p>Here&rsquo;s an example, a terminal running python shell.</p><p><div class=md-image><img src=/img/python-shell.png alt="Python shell"></div></p><p>In above example, the black background and white color text is created by the
 terminal emulator software. Terminal emulator sends whatever I typed to the
 python shell. In this example, the text <code>print("Hello world")</code> is the input I
 entered to the terminal. Terminal sent it to the python shell. Then the python
