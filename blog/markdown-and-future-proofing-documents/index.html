@@ -1,0 +1,115 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Markdown and Future Proofing Documents | CipherBlog</title><meta name=description content><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&family=Courgette&family=Pacifico&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><a rel=me href=https://mstdn.starnix.network/@cipherdragon style=display:none></a><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>DumbCooks</a></div><nav><a href=/about>About</a>
+<a href=/contact>Contact</a>
+<a href=/blog>Blog</a>
+<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><h1 class=page-title>Markdown and Future Proofing Documents</h1></div><div class=page-content><p class=author-data>Date: Feb 05, 2023<br>Author: Adeepa Gunathilake<br></p><p>Markdown is the simplest text markup language other than gemini. I would not
+be incorrect if I say markdown will only be second to gemtext and plain <code>.txt</code>
+text files in terms of simplicity. Unfortunately, there are more people who don&rsquo;t
+even know what markdown is than the people who know.</p><p><a href=#the-markdown-file-format>Jump directly to markdown cheatsheet</a></p><p>If you want to take some notes during a lecture or during a presentation etc,
+your note will mostly be plain text. Sometimes it may contain rich elements like
+graphs, columned layouts etc. but those occasions are rare.</p><p>I&rsquo;ve seen people using softwares like MS Word to take simple notes. While that&rsquo;s
+the most accessible way for most computer users, it&rsquo;s not the most efficient way
+due to several reasons. I list some of them below.</p><ul><li>Word files (<code>.docx</code>) are complex file types.</li><li>Word editing software are usually heavy and more resource intensive.</li><li>Because file formats like <code>.docx</code> or <code>.odt</code> are complex, those files will
+not be readable without the niche software like MS Word or LibreOffice Writer.</li></ul><p>Because most of your notes are just plain text, you can use the plain old <code>.txt</code>
+text file format to save them. Because of how lightweight text file format is,
+it&rsquo;s very efficient to take notes in <code>.txt</code> format. You can use the old windows
+notepad or a little more advanced tool like notepad++ to take plain text notes.</p><div class=hr></div><p>But what if you need add little more formatting to your documents such as bold
+text, images and headings? MS Word is still not an answer because there&rsquo;s a
+solution which let you use all the formattings without compromising efficiency.</p><p>That solution is MARKDOWN!!!</p><h1 id=the-markdown-file-format>The markdown file format</h1><p>Markdown files are just like plain old <code>.txt</code> files but the file extension needs
+to be <code>.md</code> instead of <code>.txt</code>. Markdown is dead simple, I&rsquo;ll show you an example
+which will make you understand markdown immediately.</p><p>This is an example file called <code>markdown-note.md</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl><span class=gh># This is a level one heading
+</span></span></span><span class=line><span class=cl><span class=gh></span>
+</span></span><span class=line><span class=cl>This is a paragraph. The above thing is a level one heading. 
+</span></span><span class=line><span class=cl>You can use upto 6 levels of heading. This is still the first
+</span></span><span class=line><span class=cl>paragraph. A paragraph ends with an empty line.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>This is the second paragraph. You can have as many paragraphs
+</span></span><span class=line><span class=cl>as you want like this. Btw, here&#39;s a level 2 heading.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=gu>## This is a level 2 heading
+</span></span></span><span class=line><span class=cl><span class=gu></span>
+</span></span><span class=line><span class=cl>You can have <span class=gs>**bold**</span> text like <span class=gs>**this**</span> and <span class=ge>*italic*</span> text 
+</span></span><span class=line><span class=cl>like <span class=ge>*this*</span>. Here&#39;s how to put a list.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>*</span> list item 1
+</span></span><span class=line><span class=cl><span class=k>*</span> list item 2
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>You can also use - to have list, like follows.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>-</span> list item 1
+</span></span><span class=line><span class=cl><span class=k>-</span> list item 2 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>And btw, numbered lists are like this.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>1.</span> item 1
+</span></span><span class=line><span class=cl><span class=k>1.</span> item 2
+</span></span><span class=line><span class=cl><span class=k>1.</span> item 3
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Or preferably,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>1.</span> item 1
+</span></span><span class=line><span class=cl><span class=k>2.</span> item 2
+</span></span><span class=line><span class=cl><span class=k>3.</span> item 3
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=sb>`inline code`</span> with backticks, and code blocks with 3 backticks.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Links like this [<span class=nt>Link name</span>](<span class=na>https://example.com</span>). Images like this.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>![<span class=nt>Image alt text</span>](<span class=na>https://example.com/image.png</span>)
+</span></span><span class=line><span class=cl><span class=k>
+</span></span></span><span class=line><span class=cl><span class=k>&gt; </span><span class=ge>This is how you insert blockquotes
+</span></span></span><span class=line><span class=cl><span class=ge></span><span class=k>&gt; </span><span class=ge>You just have to start the line with
+</span></span></span><span class=line><span class=cl><span class=ge></span><span class=k>&gt; </span><span class=ge>a less than (&gt;) sign.
+</span></span></span></code></pre></td></tr></table></div></div><p>As you can see, markdown format is dead simple. You don&rsquo;t need special software
+to read a <code>.md</code> file. You can just use the plain old notepad or notepad++, but
+because it&rsquo;s markdown, we can use markdown previewer software to see a properly
+formatted output.</p><ol><li>Marktext</li><li>Visual studio code</li></ol><p>To download marktext, visit marktext github release page
+<a href=https://github.com/marktext/marktext/releases/>here</a> and download the
+<code>marktext-setup.exe</code> file for windows or <code>marktext-arm64.dmg</code> for mac.</p><p>Visual studio code is the ultra powerful option. To preview a markdown file
+in VS Code, press <code>ctrl+shit+v</code> while opening the markdown file. Download
+VS code <a href=https://code.visualstudio.com/>here</a>.</p><p><div class=md-image><img src=marktext.webp alt=marktext></div></p><p>If you find this article useful, you are free to share, but more than that,
+I invite you to look more about this if you feel like this article is not
+enough. Here&rsquo;s a good <a href=https://commonmark.org/help/>starting point</a> other
+than <a href=https://google.com/>google.com</a>.</p></div><div class=hr></div><div class=commenting><h3>Thanks for stopping by 💗</h3></div></div></body></html>
