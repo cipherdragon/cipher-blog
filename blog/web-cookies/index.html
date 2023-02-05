@@ -1,0 +1,41 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>What are Web Cookies? | CipherBlog</title><meta name=description content><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&family=Courgette&family=Pacifico&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><a rel=me href=https://mstdn.starnix.network/@cipherdragon style=display:none></a><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>DumbCooks</a></div><nav><a href=/about>About</a>
+<a href=/contact>Contact</a>
+<a href=/blog>Blog</a>
+<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><h1 class=page-title>What are Web Cookies?</h1></div><div class=page-content><p class=author-data>Date: Feb 05, 2023<br>Author: Adeepa Gunathilake<br></p><p>Here&rsquo;s a quick read.</p><p>Cookies are small text files websites set on your browser when you visit them.
+These files hold pieces of labeled data such as username and password.</p><p>Here&rsquo;s an example of a cookie file.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=nv>username</span><span class=o>=</span><span class=s2>&#34;some random username&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>password</span><span class=o>=</span><span class=s2>&#34;super complex password&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>last_login</span><span class=o>=</span><span class=m>1675604361</span>
+</span></span></code></pre></td></tr></table></div></div><p>When you close the website and revisit the site again, that site can
+read the cookie file it stored earlier and apply settings you set earlier.</p><p>Web browsers have an important security feature which prevents websites from
+reading cookies set by other websites. This means that a cookie set by instagram
+is not visible to youtube when you visit youtube. Youtube only sees the cookies
+it set.</p><p>Some common uses of cookies are,</p><ol><li>Save settings such as theme preferences.</li><li>Save account login credentials.</li><li>Analyze website usage behaviour.</li><li>Track you across websites to target ads.</li></ol><p>Last 2 points are important here. Websites do this by setting a cookie with
+an identifier that can uniquely identify you. For example, <code>uid=i_354a543</code>.
+By reading this unique identifier, website knows that the user who liked a cooking
+video yesterday is the same user who&rsquo;s visiting the site now.</p><p>Advertising companies like google and facebook take this tracking to the next
+level. They provide small [javascript] programs to web developers which
+developers can put in their websites to get features like facebook share button
+or google analytics.</p><p>These small programs are called &ldquo;pixels&rdquo;, tracking pixels to be specific.
+They place cookies to identify users.</p><p>For example, think you visit <code>tutorialspoint.com</code> and they used facebook pixel
+to provide a facebook share button. Facebook pixel can&rsquo;t see cookies set by
+<code>tutorialspoint.com</code> but it can see the user identification cookie it set when
+you visited facebook. So now facebook know you&rsquo;ve visited <code>tutorialspoint.com</code> and
+read a article about <code>C++</code>.</p><p>Then facebook can serve you relavent ads.</p><h2 id=why-website-alert-users-that-they-use-cookies>Why website alert users that they use cookies?</h2><p>&ldquo;Web Cookie&rdquo; is something that only web developers knew about 5 years ago, but
+now everybody have seen that word. That is because websites now put pop-up alerts
+saying that they use cookies.</p><p>Why websites annoy users this way? Why can&rsquo;t they use cookies silently without
+telling the user? Is there any technical requirement?</p><p>Of course not. There&rsquo;s no any technical requirement. Web developers can use
+cookies without telling the user, &mldr;but, doing that might be illegal.</p><p>I took almost 3 paragraphs to explain how advertising companies use
+cookies to invade users&rsquo; privacy and show people targetted ads. Privacy is a
+human right and advertisers violate that right through online surveillance.
+Cookies are a major technology advertisers using to track people. So EU
+intervened.</p><p>I&rsquo;m not a lawyer. I don&rsquo;t know much, but I know about 3 regulations that affects
+usage of web cookies.</p><ol><li>General Data Protection Regulation (GDPR)</li><li>ePrivacy Directive</li><li>ePrivacy Regulation</li></ol><p>To comply with those regulations, websites should inform users about how they
+use cookies and should take users consent before placing cookies in users&rsquo;
+browsers.</p><p>That&rsquo;s how annoying cookie pop-ups came in.</p><p>In this website you don&rsquo;t see any cookie pop-ups. That&rsquo;s because I don&rsquo;t use
+any cookies. I don&rsquo;t have any analytics or tracking here.</p><p>EU regulations did not solve the online tracking problem. It only littered
+web with annoying cookies. Thanking to those pop-ups, everyone now know something
+called web cookies exist.</p><div class=hr></div><p>P.S Websites don&rsquo;t save passwords in cookies for authentication. They use
+something called authentication tokens.</p><div class=hr></div><p>Here are some useful references.</p><p><a href=https://gdpr.eu/cookies/>https://gdpr.eu/cookies/</a><br><a href=https://gdpr.eu/what-is-gdpr/>https://gdpr.eu/what-is-gdpr/</a></p></div><div class=hr></div><div class=commenting><h3>Thanks for stopping by 💗</h3></div></div></body></html>
