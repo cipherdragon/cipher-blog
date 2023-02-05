@@ -4,7 +4,7 @@
     position: relative;
     padding-bottom: 50px;
     box-sizing: border-box;
-    background-image: url('/img/shop.jpg');
+    background-image: url('/img/shop.webp');
     background-size: cover;
     background-position: center;
 }
@@ -94,7 +94,7 @@
 }
 
 .img-wrapper {
-    background-image: url("/img/me3.jpeg");
+    background-image: url("/img/me.webp");
     width: 300px;
     height: 400px;
     background-size: cover;
@@ -160,7 +160,8 @@
     font-family: 'Cabin', sans-serif;
     font-size: 20px;
     text-align: center;
-    color: rgb(255, 97, 163);
+    color: rgb(250, 132, 181);
+    font-weight: bold;
     padding: 0 20px;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -182,7 +183,7 @@
 .blog-intro__line-main {
     font-size: 24px;
     font-weight: bold;
-    color: rgb(255, 97, 163);
+    color: rgb(248, 131, 180);
 }
 
 .blog-card-container {
