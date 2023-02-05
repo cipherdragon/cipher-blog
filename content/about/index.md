@@ -33,7 +33,7 @@ engaging in activities related to computer science rewarded me a lot of dopamine
 I spent so much hours coding unfinished useless hobby projects and learning many
 things related to computer science just because it pleases my mind.
 
-![death rode pale horse cat meme](/img/death-rode-pale-horse-cat-on-dog-2.jpg)
+![death rode pale horse cat meme](/img/death-rode-pale-horse-cat-on-dog.webp)
 
 ## Youtube channels I enjoy watching
 
