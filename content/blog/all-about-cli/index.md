@@ -39,7 +39,7 @@ nonsense text will be thrown away.
 
 <div class="hr"></div>
 
-![Teletype Model 33](/img/teletype.jpg)
+![Teletype Model 33](teletype.jpg)
 
 What you saw above is called a teletype(aka, a TTY) [model 33]. This is how
 computers output the information before screens and monitors were invented. The
@@ -69,7 +69,7 @@ right?
 
 Now, back to the modern times. Here's a modern terminal.
 
-![Bash terminal on a fedora 36](/img/terminal-modern.jpg)
+![Bash terminal on a fedora 36](terminal-modern.jpg)
 
 But that terminal looks nothing like the previous model 33 teletype terminal.
 So why it is called a terminal? Well, even though we call it a
@@ -78,7 +78,7 @@ terminal for our ease, that piece of software is not a terminal, but a
 emulates the old "terminal." Most modern terminal emulator software emulates the
 old DEC VT100 terminal.
 
-![DEC VT100 terminal](/img/VT100-terminal.jpg)
+![DEC VT100 terminal](VT100-terminal.jpg)
 
 Above image is a **DEC VT100** terminal. It is what the most modern terminal
 emulator software emulates. It does not print computer output on paper as in
@@ -112,7 +112,7 @@ shell will inform that the command does not exist.
 
 Here's an example, a terminal running python shell.
 
-![Python shell](/img/python-shell.png)
+![Python shell](python-shell.png)
 
 In above example, the black background and white color text is created by the 
 terminal emulator software. Terminal emulator sends whatever I typed to the
