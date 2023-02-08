@@ -3,3 +3,4 @@ terminal
 life
 linux
 technology
+updates
