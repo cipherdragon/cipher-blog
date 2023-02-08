@@ -11,12 +11,10 @@ Here's my contact details:
 + mastodon: [@cipherdragon@mstdn.starnix.network](https://mstdn.starnix.network/@cipherdragon)
 + github: [github.com/cipherdragon](https://github.com/cipherdragon)
 
-My gpg key is available on the MIT keyserver. 
-Download from [here](https://pgp.mit.edu/pks/lookup?op=get&search=0xF933FCFED4834ADE)
-or use the following command to import.
+Update (2023-02-09):
 
-```sh
-gpg --recv-keys EFB5800FD17CE9498DCDB508F933FCFED4834ADE
-```
+I lost access to my gpg private keys, so I won't sign any documents with the keys
+I've published on public keyservers. I might generate a new key pair and put the
+public key here, but for now, I have no gpg keys.
 
 That's it. That's how you contact me if you ever wants to.
