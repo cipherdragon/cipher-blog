@@ -1,9 +1,8 @@
 ---
 title: "Generate QR codes quickly in linux terminal"
 date: 2022-08-04T20:07:08+05:30
-description: "I had to generate QR codes to transfer a password to the phone. Here's what I did."
 draft: false
-tags: ["tech", "linux", "terminal", "programming"]
+tags: ["technology", "linux", "terminal", "programming"]
 ---
 
 Recently I had to type a long password to an app, but it's super complex that

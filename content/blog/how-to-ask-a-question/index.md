@@ -2,9 +2,7 @@
 title: "How to Ask a Question"
 date: 2022-10-19T17:39:20+05:30
 draft: false
-tags: ["tech", "programming"]
-description: "How to properly ask a technical question without making others
-annoying."
+tags: ["technology", "programming"]
 ---
 
 It's September again! 

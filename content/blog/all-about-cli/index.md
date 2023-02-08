@@ -1,9 +1,8 @@
 ---
 title: "All About CLI"
 date: 2022-12-18T01:28:38+05:30
-description: "What is a Command Line Interface? What does shell and the means?"
 draft: false
-tags: ["tech", "programming", "terminal"]
+tags: ["technology", "programming", "terminal"]
 ---
 
 This article will be on "Command Line Interface," (CLI in short) aka the black

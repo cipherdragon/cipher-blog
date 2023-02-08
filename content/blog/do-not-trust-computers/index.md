@@ -2,8 +2,7 @@
 title: "I don't trust computers. Am I a caveman?"
 date: 2022-07-25T02:51:58+05:30
 draft: true
-description: "Me ranting about why trusting computers is dumb. Don't read this."
-tags: ["trash", "life", "tech"]
+tags: ["life", "technology"]
 ---
 
 My high school history teacher worked at a local bank once and he said some

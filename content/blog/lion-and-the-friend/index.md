@@ -1,9 +1,8 @@
 ---
 title: "Lion and the Friend."
 date: 2022-07-29T23:07:30+05:30
-description: "A little funny story about competitiveness of the world."
 draft: false
-tags: ["life", "story"]
+tags: ["life"]
 ---
 
 Here's a story. Happened in Africa.
