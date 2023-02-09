@@ -111,3 +111,7 @@ body {
     text-align: center;
     font-size: 24px;
 }
+
+.chroma .lnt {
+    display: block;
+}
