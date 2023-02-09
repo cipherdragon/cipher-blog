@@ -76,6 +76,7 @@ body {
     display: flex;
     gap: 15px;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .nav nav a, a:visited {
