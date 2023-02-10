@@ -1,0 +1,59 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Git Cheatsheet | CipherBlog</title><meta name=description content><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&family=Courgette&family=Pacifico&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><a rel=me href=https://mstdn.starnix.network/@cipherdragon style=display:none></a><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>DumbCooks</a></div><nav><a href=/>Home</a>
+<a href=/about>About</a>
+<a href=/contact>Contact</a>
+<a href=/blog>Blog</a>
+<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><h1 class=page-title>Git Cheatsheet</h1></div><div class=page-content><p class=author-data>Date: Feb 09, 2023<br>Author: Adeepa Gunathilake<br></p><p>Git is a version control system, another great invention of Linus Torvalds. This
+will be a basic cheatsheet containing common git commands targeted at beginners.
+See the links in the <a href=#advanced-git-cheatsheets>bottom</a> for advanced git
+cheatsheets.</p><h2 id=common-git-workflow>Common git workflow</h2><p>To create (initialize) a git repository</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git init
+</span></span></code></pre></td></tr></table></div></div><hr><p>To clone a remote git repository</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git clone <span class=o>[</span>remote repo url<span class=o>]</span>
+</span></span></code></pre></td></tr></table></div></div><hr><p>To see the current status of the working directory</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git status
+</span></span></code></pre></td></tr></table></div></div><p>To add files [to the staging area] for commiting</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; <span class=c1># to add a single file</span>
+</span></span><span class=line><span class=cl>$&gt; git add file1.txt
+</span></span><span class=line><span class=cl>$&gt; <span class=c1># to add multiple files</span>
+</span></span><span class=line><span class=cl>$&gt; git add file_1.py file_2.py file_3.py file_n.py
+</span></span><span class=line><span class=cl>$&gt; <span class=c1># to add all files changed</span>
+</span></span><span class=line><span class=cl>$&gt; git add .
+</span></span></code></pre></td></tr></table></div></div><hr><p>Once you added files [to staging area] for commiting, next step is to commit. This is how to do it.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git commit -m <span class=s2>&#34;commit message para 1&#34;</span> -m <span class=s2>&#34;commit message para 2 and so on&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><hr><p>Imaging you forget to add some changes to your last commit or you want to change
+commit message of previous commit. Add the new changes to the staging area by
+<code>git add</code> command (if you only want to change the commit message, you can skip
+this step), and then amend the previous commit like this.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git commit --amend -m <span class=s2>&#34;new message&#34;</span>
+</span></span><span class=line><span class=cl>$&gt; <span class=c1># or if you don&#39;t want to change previous commit message</span>
+</span></span><span class=line><span class=cl>$&gt; git commit --amend --no-edit
+</span></span></code></pre></td></tr></table></div></div><hr><p>To push your local commits to the remote repository</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git push origin <span class=o>[</span>branch-name<span class=o>]</span>
+</span></span><span class=line><span class=cl>$&gt; <span class=c1># see below example, where branch name is main</span>
+</span></span><span class=line><span class=cl>$&gt; git push origin main
+</span></span></code></pre></td></tr></table></div></div><hr><p>Similarly, to pull the changes from remote repo to your local copy</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git pull origin main
+</span></span><span class=line><span class=cl>$&gt; <span class=c1># or simply, for the current working branch</span>
+</span></span><span class=line><span class=cl>$&gt; git pull
+</span></span></code></pre></td></tr></table></div></div><p>To log all commits</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git log
+</span></span><span class=line><span class=cl>$&gt; <span class=c1># to get a one line summary of each commit</span>
+</span></span><span class=line><span class=cl>$&gt; git log --oneline
+</span></span></code></pre></td></tr></table></div></div><hr><p>Find a problem in your new software version? Revert back to old version like this.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>$&gt; git revert &lt;commit-hash&gt;
+</span></span></code></pre></td></tr></table></div></div><p>This will revert changes back to the given commit (commit-hash). This will not
+delete the old faulty commits. Instead, git will create a new commit that
+cancels off the faulty commits.</p><hr><h2 id=useful-references>Useful references</h2><p>Note: SO is the abbreviation for StackOverflow</p><ul><li><a href=https://stackoverflow.com/questions/1186535/how-do-i-modify-a-specific-commit>How to modify a old git commit [SO]</a></li><li><a href=https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-locally-hosted-code-to-github>Upload a local repository to github</a></li><li><a href=https://stackoverflow.com/questions/43762338/how-to-remove-file-from-git-history>Remove a file from git history</a></li><li><a href=https://stackoverflow.com/questions/2938301/remove-specific-commit>Delete specific git commit</a></li></ul><h2 id=advanced-git-cheatsheets>Advanced git cheatsheets</h2><ul><li><a href=https://training.github.com/downloads/github-git-cheat-sheet/>Github&rsquo;s git cheatsheet</a></li><li><a href=https://about.gitlab.com/images/press/git-cheat-sheet.pdf>Gitlab&rsquo;s git cheatsheet</a></li><li><a href=http://git-cheatsheet.com/>git-cheatsheet.com</a></li></ul></div><div class=hr></div><div class=commenting><h3>Thanks for stopping by 💗</h3></div></div></body></html>
