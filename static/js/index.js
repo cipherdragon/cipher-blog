@@ -68,35 +68,3 @@ animateGhost();
 setInterval(() => {
     animateGhost();
 }, 20000)
-
-const ghost_path = anime.path('.ghost-path');
-
-anime({
-    targets: '.ghost',
-    translateX: ghost_path('x'),
-    translateY: ghost_path('y'),
-    duration: 8000,
-    easing: "linear",
-    loop: true,
-});
-
-// a = anime({
-//     targets: '.ghost',
-//     keyframes: [
-//         {translateX: 10},
-//         {translateX: 0},
-//         {translateX: 0},
-//         {translateX: -10},
-//         {translateX: 0},
-//         {translateX: 10},
-//         {translateX: 0},
-//     ],
-//     // translateX: 30,
-//     duration: 4000,
-//     // easing: "linear",
-
-//     easing: 'linear',
-//     loop: true,
-// });
-
-console.log(a);
