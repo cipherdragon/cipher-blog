@@ -198,8 +198,18 @@
     color: rgb(107, 205, 235);
 }
 
-.explore_blog,
-.explore_blog:visited {
+.explore_blog {
+    max-width: 520px;
+    margin: 0 auto;
+    display: block;
+    color: rgb(130, 214, 240);
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
+    text-decoration: none;
+}
+
+.big-link-btn,
+.big-link-btn:visited {
     display: block;
     background-color: var(--fg-color);
     max-width: 520px;
