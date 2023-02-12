@@ -137,7 +137,7 @@ async function renderQuoteText(matrix, matrix_text, new_matrix_text = "", no_ani
             matrix[0][i].innerText = current_state[i];
         }
 
-        await sleep(20);
+        // await sleep(20);
         if (!done) window.requestAnimationFrame(progressMatrix);
     }
 
