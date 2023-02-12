@@ -3,12 +3,9 @@ const quotes = [
     ["", "When life gives you lemons,", "squirt someone in the eye."],
     ["", "If a book about failures", "doesn't sell, is it a success?"],
     ["", "If you're too open-minded;", "your brains will fall out."],
-    ["", "Never miss a good chance to", "shut up."],
-    ["", "The early bird gets the worm,", "but the second mouse gets the cheese."],
+    ["", "Never miss a", "good chance to shut up."],
     ["", "I intend to live forever.", "So far, so good."],
     ["", "A Penny Saved", "is a Penny Earned"],
-    ["", "Some days I amaze myself. Other days,", "I put my keys in the fridge."],
-    ["", "Don't take life too seriously.", "You'll never get out of it alive."],
     ["", "If you fall, I'll be there.", "- The floor, 1982."],
     ["", "A day without sunshine is like,", "you know, night."],
     ["", "I love you more than coffee", "but not always before coffee."],
@@ -148,7 +145,7 @@ async function renderQuoteText(matrix, matrix_text, new_matrix_text = "", no_ani
 }
 
 async function animateQuotes(matrix, matrix_text, line_count) {
-    const random = random_quote_index++ % 13;
+    const random = random_quote_index++ % (quotes.length - 1);
     const random_quote = quotes[random];
 
     matrix_text_new = updateMatrixText(matrix, matrix_text, line_count, random_quote);
