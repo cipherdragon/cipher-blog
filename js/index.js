@@ -132,7 +132,7 @@ async function renderQuoteText(matrix, matrix_text, new_matrix_text = "", no_ani
     let done = false;
     let current_state = matrix_text;
 
-    while (!done) {
+    const progressMatrix = async () => {
         [current_state, done] = updateMatrixData(current_state, new_matrix_text);
 
         for (i = 0; i < current_state.length; i++){
@@ -141,7 +141,10 @@ async function renderQuoteText(matrix, matrix_text, new_matrix_text = "", no_ani
         }
 
         await sleep(20);
+        if (!done) window.requestAnimationFrame(progressMatrix);
     }
+
+    window.requestAnimationFrame(progressMatrix);
 }
 
 async function animateQuotes(matrix, matrix_text, line_count) {
