@@ -178,7 +178,9 @@ window.onresize = async () => {
     matrix_text = new_matrix_data.matrix_text;
 
     renderQuoteText(matrix, matrix_text, "", true);
+    setTimeout(() => animateQuotes(matrix, matrix_text, 4), 1000);
     previous_width = window.innerWidth;
 }
 
-runQuotesAnimation()
+// runQuotesAnimation()
+setTimeout(() => animateQuotes(matrix, matrix_text, 4), 1000);
