@@ -164,7 +164,7 @@ renderQuoteText(matrix, matrix_text, "", true);
 async function runQuotesAnimation() {
     while (run_animation) {
         [matrix, matrix_text] = await animateQuotes(matrix, matrix_text, 4);
-        await sleep(10000);
+        await sleep(30000);
     }
 }
 
