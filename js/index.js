@@ -1,102 +1,180 @@
 const quotes = [
-    ["I did not attend his funeral,", "but I sent a nice letter", "saying I approved of it."],
-    ["Accept who you are. Unless", "you're a serial killer."],
-    ["When life gives you lemons,", "squirt someone in the eye."],
-    ["If a book about failures", "doesn't sell, is it a success?"],
-    ["If you're too open-minded;", "your brains will fall out."],
-    ["Never miss a good chance to", "shut up."],
-    ["Taking naps sounds so", "childish. I prefer to call them", "horizontal life pauses."],
-    ["I love you more than coffee", "but not always before coffee."],
-    ["Always go to other people's", "funerals, otherwise", "they won't come to yours."],
-    ["Every man is guilty of all", "the good he did not do."],
-    ["The world is a globe.", "The farther you sail,", "the closer to home you are."],
-    ["The early bird gets the worm,", "but the second mouse gets the cheese."],
-    ["I intend to live forever.", "So far, so good."],
-    ["It does not matter whether", "you win or lose, what matters is", "whether I win or lose!"],
-    ["A Penny Saved is a Penny Earned"],
-    ["Some days I amaze myself. Other days,", "I put my keys in the fridge."],
-    ["Don't take life too seriously.", "You'll never get out of it alive."],
-    ["If you fall, I'll be there.", "- The floor, 1982."],
-    ["If you think you are", "too small to make a difference,", "try sleeping with a mosquito."],
-    ["A day without sunshine is like,", "you know, night."],
+    ["", "Accept who you are. Unless", "you're a serial killer."],
+    ["", "When life gives you lemons,", "squirt someone in the eye."],
+    ["", "If a book about failures", "doesn't sell, is it a success?"],
+    ["", "If you're too open-minded;", "your brains will fall out."],
+    ["", "Never miss a good chance to", "shut up."],
+    ["", "The early bird gets the worm,", "but the second mouse gets the cheese."],
+    ["", "I intend to live forever.", "So far, so good."],
+    ["", "A Penny Saved", "is a Penny Earned"],
+    ["", "Some days I amaze myself. Other days,", "I put my keys in the fridge."],
+    ["", "Don't take life too seriously.", "You'll never get out of it alive."],
+    ["", "If you fall, I'll be there.", "- The floor, 1982."],
+    ["", "A day without sunshine is like,", "you know, night."],
+    ["", "I love you more than coffee", "but not always before coffee."],
+    ["", "Every man is guilty of all", "the good he did not do."],
 ]
 
-let i = Math.ceil(Math.random() * 20);
-let current_ghost_quote = "";
+const matrix_container = document.getElementById("quote");
+const init_matrix_text = "!function(n,e){'object'==typeof exports&&'undefined'!=typeof module?module.exports=e():'function'==typeof define&&define.amd?define(e):n.anime=e()}(this,function(){'use strict';var n={update:null,begin:";
 
-function setRandomGhostQuote() {
-    const ghostQuoteWrapper = document.querySelector(".ghost-quote .letters");
-    if (i > 40) i = 0;
-    const random = i++ % 19;
-    
-    const random_quote = quotes[random];
-    
-    let quote = "";
-    current_ghost_quote = "";    
+function computeLetterWidth(container_element) {
+    const computed_styles = window.getComputedStyle(container_element);
+    const dummy_el = document.createElement(container_element.tagName);
+    const span_el = document.createElement("span");
 
-    random_quote.forEach((quote_fragment) => {
-        current_ghost_quote += quote_fragment.trim() + " ";
-        quote_fragment = quote_fragment.replace(/\S/g, "<span class='letter' style='transform: scale(0);'>$&</span>");
-        quote += quote_fragment + '<br>';
-    })
+    Array.from(computed_styles).forEach(key => {
+        dummy_el.style
+            .setProperty(key, computed_styles.getPropertyValue(key),'important');
+    });
 
-    current_ghost_quote = current_ghost_quote.trim();
+    span_el.innerText = "x";
 
-    ghostQuoteWrapper.innerHTML = quote;
+    dummy_el.appendChild(span_el);
+    document.body.appendChild(dummy_el);
+
+    const width = span_el.getBoundingClientRect().width;
+
+    document.body.removeChild(dummy_el);
+    console.log(width);
+    return width;
 }
 
-const animateGhost = () => {
-    setRandomGhostQuote();
-    anime.timeline()
-        .add({
-            targets: '.ghost-quote .letter',
-            scale: [0, 1],
-            duration: 900,
-            delay: (el, i) => 45 * (i + 1),
-        })
-        .add({
-            targets: '.ghost-quote .letter',
-            opacity: [1, 0],
-            duration: 900,
-            easing: "easeOutExpo",
-            delay: (el, i) => 45 * (current_ghost_quote.length - i + 1) + 12000,
-        })
+function replaceSubString(original_text, replace_text, index) {
+    return original_text.substring(0, index) + replace_text + original_text.substring(index + replace_text.length);
+}
+
+function initializeMatrix(matrix_container, rows = 1) {
+    matrix_container.classList.remove('quote-letter-fix');
+
+    const letter_width = computeLetterWidth(matrix_container);
+    const container_width = matrix_container.clientWidth;
+    const letter_count = Math.floor(container_width / letter_width);
+    let matrix_text = "";
+    const matrix = [];
+    let matrix_style = "";
+    
+    matrix_container.innerHTML = "";
+    matrix_container.style.setProperty("--quote-letter-count", letter_count)
+    matrix_container.classList.add('quote-letter-fit')
+
+    for (i = 0; i < letter_count * rows; i++){
+        const span = document.createElement("span");
+        matrix.push(span);
+        matrix_container.appendChild(span);
+        matrix_text += init_matrix_text[i % init_matrix_text.length];
+        matrix_style += "B";
     }
 
-animateGhost();
+    return {
+        matrix: [matrix, matrix_style],
+        matrix_text
+    }
+}
 
-setInterval(() => {
-    animateGhost();
-}, 20000)
+function updateMatrixText(matrix, matrix_text, rows = 1, text_lines) {
+    const row_width = matrix[0].length / rows;
+    const row_center_pos = Math.floor(row_width / 2);
 
-const ghost_path = anime.path('.ghost-path');
+    matrix[1] = "B".repeat(matrix[1].length);
 
-anime({
-    targets: '.ghost',
-    translateX: ghost_path('x'),
-    translateY: ghost_path('y'),
-    duration: 8000,
-    easing: "linear",
-    loop: true,
-});
+    for (i = 0; i < text_lines.length; i++) {
+        const line_half_size = Math.floor(text_lines[i].length / 2);
+        const row_start_pos = row_center_pos - line_half_size;
+        const start_index = row_width * i + row_start_pos;
 
-// a = anime({
-//     targets: '.ghost',
-//     keyframes: [
-//         {translateX: 10},
-//         {translateX: 0},
-//         {translateX: 0},
-//         {translateX: -10},
-//         {translateX: 0},
-//         {translateX: 10},
-//         {translateX: 0},
-//     ],
-//     // translateX: 30,
-//     duration: 4000,
-//     // easing: "linear",
+        matrix_text = replaceSubString(matrix_text, text_lines[i], start_index);
+        matrix[1] = replaceSubString(matrix[1], "F".repeat(text_lines[i].length), start_index);
+    }
 
-//     easing: 'linear',
-//     loop: true,
-// });
+    return matrix_text;
+}
 
-console.log(a);
+function updateMatrixData(current_state, required_state) {
+    let updated_state = current_state;
+    let new_state = ""
+
+    if (current_state === required_state) {
+        return [current_state, true];
+    }
+
+    for (let i = 0; i < required_state.length; i++) {
+        if (updated_state[i] === required_state[i]) {
+            new_state += current_state[i];
+        } else {
+            const new_code = (updated_state.charCodeAt(i) + 1 - 32) % 94 + 32;
+            new_state += String.fromCharCode(new_code);
+            updated_state = new_state + updated_state.substring(new_state.length);
+        }
+    }
+
+    if (current_state === required_state) {
+        return [current_state, true];
+    }
+
+    return [new_state, false];
+}
+
+function sleep(timeout) {
+    return new Promise(resolve => setTimeout(resolve, timeout));
+}
+
+async function renderQuoteText(matrix, matrix_text, new_matrix_text = "", no_animation = false) {
+    if (no_animation) {
+        for (i = 0; i < matrix_text.length; i++){
+            matrix[0][i].className = matrix[1][i] === "B" ? "quote-background-char" : "quote-foreground-char";
+            matrix[0][i].innerText = matrix_text[i];
+        }
+
+        return;
+    }
+    
+    let done = false;
+    let current_state = matrix_text;
+
+    while (!done) {
+        [current_state, done] = updateMatrixData(current_state, new_matrix_text);
+
+        for (i = 0; i < current_state.length; i++){
+            matrix[0][i].className = matrix[1][i] === "B" ? "quote-background-char" : "quote-foreground-char";
+            matrix[0][i].innerText = current_state[i];
+        }
+
+        await sleep(20);
+    }
+}
+
+async function animateQuotes(matrix, matrix_text, line_count) {
+    const random = random_quote_index++ % 13;
+    const random_quote = quotes[random];
+
+    matrix_text_new = updateMatrixText(matrix, matrix_text, line_count, random_quote);
+    await renderQuoteText(matrix, matrix_text, matrix_text_new, false);
+    return [matrix, matrix_text_new];
+}
+
+let random_quote_index = Math.ceil(Math.random() * 14);
+let current_random_quote = "";
+let run_animation = true;
+let {matrix, matrix_text} = initializeMatrix(matrix_container, 4);
+
+renderQuoteText(matrix, matrix_text, "", true);
+
+async function runQuotesAnimation() {
+    while (run_animation) {
+        [matrix, matrix_text] = await animateQuotes(matrix, matrix_text, 4);
+        await sleep(10000);
+    }
+}
+
+window.onresize = async () => {
+    const new_matrix_data = initializeMatrix(matrix_container, 4);
+    matrix = new_matrix_data.matrix;
+    matrix_text = new_matrix_data.matrix_text;
+
+    renderQuoteText(matrix, matrix_text, "", true);
+
+    await sleep(500);
+}
+
+runQuotesAnimation()
