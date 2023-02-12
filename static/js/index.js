@@ -157,6 +157,7 @@ let random_quote_index = Math.ceil(Math.random() * 14);
 let current_random_quote = "";
 let run_animation = true;
 let {matrix, matrix_text} = initializeMatrix(matrix_container, 4);
+let previous_width = window.innerWidth;
 
 renderQuoteText(matrix, matrix_text, "", true);
 
@@ -168,11 +169,14 @@ async function runQuotesAnimation() {
 }
 
 window.onresize = async () => {
+    if (window.innerWidth === previous_width) return;
+
     const new_matrix_data = initializeMatrix(matrix_container, 4);
     matrix = new_matrix_data.matrix;
     matrix_text = new_matrix_data.matrix_text;
 
     renderQuoteText(matrix, matrix_text, "", true);
+    previous_width = window.innerWidth;
 }
 
 runQuotesAnimation()
