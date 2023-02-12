@@ -138,10 +138,12 @@ async function renderQuoteText(matrix, matrix_text, new_matrix_text = "", no_ani
         }
 
         // await sleep(20);
-        if (!done) window.requestAnimationFrame(progressMatrix);
+        // if (!done) window.requestAnimationFrame(progressMatrix);
+        if (!done) setTimeout(progressMatrix, 10);
     }
 
-    window.requestAnimationFrame(progressMatrix);
+    progressMatrix()
+    // window.requestAnimationFrame(progressMatrix);
 }
 
 async function animateQuotes(matrix, matrix_text, line_count) {
