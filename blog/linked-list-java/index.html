@@ -1,0 +1,129 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Linked List Java | CipherBlog</title><meta name=description content><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&family=Courgette&family=Pacifico&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><a rel=me href=https://mstdn.starnix.network/@cipherdragon style=display:none></a><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>DumbCooks</a></div><nav><a href=/>Home</a>
+<a href=/about>About</a>
+<a href=/contact>Contact</a>
+<a href=/blog>Blog</a>
+<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><h1 class=page-title>Linked List Java</h1></div><div class=page-content><p class=author-data>Date: Mar 10, 2023<br>Author: Adeepa Gunathilake<br></p><p>Java linked list implementation for my friends&rsquo; reference.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>LinkedList</span> <span class=o>{</span>    
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>size</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>Node</span> <span class=n>head</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>Node</span> <span class=n>tail</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>insert</span><span class=o>(</span><span class=kt>int</span> <span class=n>value</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>head</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>head</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Node</span><span class=o>(</span><span class=kc>null</span><span class=o>,</span> <span class=kc>null</span><span class=o>,</span> <span class=n>value</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=n>tail</span> <span class=o>=</span> <span class=n>head</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>tail</span><span class=o>.</span><span class=na>next</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Node</span><span class=o>(</span><span class=n>tail</span><span class=o>,</span> <span class=kc>null</span><span class=o>,</span> <span class=n>value</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>tail</span> <span class=o>=</span> <span class=n>tail</span><span class=o>.</span><span class=na>next</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>remove</span><span class=o>(</span><span class=kt>int</span> <span class=n>value</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>Node</span> <span class=n>current_node</span> <span class=o>=</span> <span class=n>head</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=o>(</span><span class=n>current_node</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>current_node</span><span class=o>.</span><span class=na>item</span> <span class=o>==</span> <span class=n>value</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>current_node</span><span class=o>.</span><span class=na>previous</span><span class=o>.</span><span class=na>next</span> <span class=o>=</span> <span class=n>current_node</span><span class=o>.</span><span class=na>next</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=n>current_node</span><span class=o>.</span><span class=na>next</span><span class=o>.</span><span class=na>previous</span> <span class=o>=</span> <span class=n>current_node</span><span class=o>.</span><span class=na>previous</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=n>current_node</span> <span class=o>=</span> <span class=n>current_node</span><span class=o>.</span><span class=na>next</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>print</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Node</span> <span class=n>current_node</span> <span class=o>=</span> <span class=n>head</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=o>(</span><span class=n>current_node</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>current_node</span><span class=o>.</span><span class=na>item</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=n>current_node</span> <span class=o>=</span> <span class=n>current_node</span><span class=o>.</span><span class=na>next</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>class</span> <span class=nc>Node</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>item</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>Node</span> <span class=n>next</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>Node</span> <span class=n>previous</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>Node</span><span class=o>(</span><span class=n>Node</span> <span class=n>previous</span><span class=o>,</span> <span class=n>Node</span> <span class=n>next</span><span class=o>,</span> <span class=kt>int</span> <span class=n>value</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>this</span><span class=o>.</span><span class=na>item</span> <span class=o>=</span> <span class=n>value</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>this</span><span class=o>.</span><span class=na>next</span> <span class=o>=</span> <span class=n>next</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>this</span><span class=o>.</span><span class=na>previous</span> <span class=o>=</span> <span class=n>previous</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// main method for quick testing
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>LinkedList</span> <span class=n>list</span> <span class=o>=</span> <span class=k>new</span> <span class=n>LinkedList</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>insert</span><span class=o>(</span><span class=mi>10</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>insert</span><span class=o>(</span><span class=mi>13</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>insert</span><span class=o>(</span><span class=mi>17</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>insert</span><span class=o>(</span><span class=mi>16</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>insert</span><span class=o>(</span><span class=mi>14</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>remove</span><span class=o>(</span><span class=mi>17</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>print</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div></div><div class=hr></div><div class=commenting><h3>Thanks for stopping by 💗</h3></div></div></body></html>
