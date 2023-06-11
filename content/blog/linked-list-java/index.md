@@ -1,7 +1,7 @@
 ---
 title: "Linked List Java"
 date: 2023-03-10T09:32:40+05:30
-draft: false
+draft: true 
 tags: ["programming"]
 ---
 
