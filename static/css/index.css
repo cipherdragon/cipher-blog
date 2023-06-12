@@ -260,3 +260,9 @@
     place-items: center;
     text-align: center;
 }
+
+#matrix-canvas {
+    border: 1px dashed var(--bg2-color);
+    margin-top: 20px;
+    margin-bottom: -8px;
+}
