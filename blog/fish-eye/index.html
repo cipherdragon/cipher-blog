@@ -1,0 +1,50 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>The Fish Eye Project | CipherBlog</title>
+<meta name=description content><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&family=Courgette&family=Pacifico&display=swap" rel=stylesheet><link rel=stylesheet href=/css/common.css><link rel=stylesheet href=/css/chroma-syntax.css><link rel=stylesheet href=/css/single.css></head><body><a rel=me href=https://mstdn.starnix.network/@cipherdragon style=display:none></a><div class=body-container><div class=nav-container><section class=nav><div class=site-name><a href=/ style=text-decoration:none>DumbCooks</a></div><nav><a href=/>Home</a>
+<a href=/about>About</a>
+<a href=/contact>Contact</a>
+<a href=/blog>Blog</a>
+<a href=/diary>Diary</a></nav></section></div><div class=page-title-container><h1 class=page-title>The Fish Eye Project</h1></div><div class=page-content><p class=author-data>Date: Dec 13, 2023<br>Author: Adeepa Gunathilake<br></p><p>It&rsquo;s a long time since I left a blog post here that I even forget how to write.
+Had to read the hugo manual to figure out out to write a new one. Anyway&mldr;</p><p>I want to share my new idea. It is, <strong>The Fish Eye Project</strong>.</p><p>This idea is simply a camera app which will record a video and backup it to a
+cloud storage in real time. It&rsquo;s like facebook or youtube live, but for personal
+purposes. Especially, privacy is preserved with encryption.</p><p>Now, for whom this app is for? It&rsquo;s for everyone. To better explain, I&rsquo;ll grab
+an example scenario. Think of you being in a situation where you went shopping
+and all of a sudden, the security guard accuse you of shoplifting and demand to
+search you. You obviously didn&rsquo;t shoplift. Due to the guard being physically fit
+than you, you can&rsquo;t do anything against them, but if you could record the
+situation, it might help you in future.</p><p>So you starts recording only to get the recording deleted by the guard, or if
+you are too unlucky, he may even destroy your phone entirely. Lucky for me, I&rsquo;ve
+never being through such a situation, but I&rsquo;ve heard of many. There&rsquo;s a very
+real possiblity something like this could happen to you or to me.</p><p>Fish Eye tries to solve this problem by uploading the footage to cloud in real
+time. The only solutions as of now to this as far as I know are those live
+streams provided by social media, but the usecase of that feature stands for
+completely different thing. It&rsquo;s not for recording evidences. That&rsquo;s why I
+decided to build this app.</p><p>Main features I have in my mind are,</p><ul><li>Real time backup to cloud (functional requirement)</li><li>Encryption (functional requirement)</li><li>Seperate password to delete the video (functional requirement)</li><li>Dead-man&rsquo;s timer (non-functional requirement)</li></ul><p>I&rsquo;ll explain each briefly.</p><h3 id=real-time-backup-to-cloud>Real time backup to cloud</h3><p>I don&rsquo;t think I have to explain this in deep. I don&rsquo;t know how to do this right
+now, but I assume I have to record video in chucks, let&rsquo;s say in 30 second
+chunks, then encrypt it and upload it to cloud. I&rsquo;ll mention about encryption
+later.</p><h3 id=encryption>Encryption</h3><p>Encryption gives user the chance to trust the server operators. Also, it makes
+sure video will be safe from bad actors. Each video coming to the server is
+encrypted. I&rsquo;m planning to implement a signing mechanism. In short, video chunk
+is not just encrypted, but signed with the private key of the user so that the
+server can check the signature and decide whether to accept the chunk or it&rsquo;s
+just a spam data packet sending by a DDOS attacker. With the signature
+mechanism, it&rsquo;s possible to verify the user account without something lik an
+access token.</p><h3 id=seperate-password-to-delete-the-video>Seperate password to delete the video</h3><p>This is important. If the aggressor in above mentioned senario can just grab the
+phone and get an access token or a password which gives full controll over the
+video, whole purpose of the app will be defeated. So, I&rsquo;m planning to implement
+a seperate password to delete the video. This password will be asked when the
+user tries to delete the video. User is supposed to keep this password a secret
+so the video will not get deleted by unintended people.</p><h3 id=dead-mans-timer>Dead man&rsquo;s timer</h3><p>Assume the user is in a dangerous situation. I corrupted police officer arrest
+him and take him away illegally without informing anyone and just torture him.
+Even though the authenticity is unknown, I heard these kind of stories on social
+media during 2022 in Sri Lanka, during the protest period.</p><p>That&rsquo;s where the deadman&rsquo;s timeer comes in handy. User can set a timer, let&rsquo;s
+say 10 hours. If the timer is activated, it&rsquo;ll send a notification to the user&rsquo;s
+trusted contacts that the user is recorded a video. It&rsquo;s the user&rsquo;s
+responsibility to inform the contact already the decryption password of the
+encrypted video. The timer will trigger as soon as the user stops recording.</p><p>User can manually turn off the timer before the timer triggers.</p><div class=hr></div><p>I think the server only needs to accept any encrypted blob, check it&rsquo;s signature
+and save it in the respective folder and also implement other functionalities
+like deleting the video, etc. I think the client side is more complicated.</p><p>Client side is responsible to record the video, encrypt it, sign it and upload.
+Also it&rsquo;s the client&rsquo;s responsibility process all chunks and merge them into a
+single video since the server only accepts encrypted blobs. It&rsquo;s the client who
+has access to the decrypted content.</p><p>For now, that&rsquo;s all. I&rsquo;ll update as I progress.</p><p>If anyone wants to contribute, please contact me. Email is in my contact page.
+If you know me in real life, you might also have my phone number. Just text
+then.</p></div><div class=hr></div><div class=commenting><h3>Thanks for stopping by 💗</h3></div></div></body></html>
