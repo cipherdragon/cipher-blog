@@ -103,3 +103,9 @@ For now, that's all. I'll update as I progress.
 If anyone wants to contribute, please contact me. Email is in my contact page.
 If you know me in real life, you might also have my phone number. Just text
 then.
+
+<div class="hr"></div>
+
+P.S: I'm not a english professor. If you find any grammatical errors or spelling
+mistakes, sorry for that. If I spell "secrete" instead of "secret", don't ask
+stupid questions like why did I misspell it. It's just a typo.
